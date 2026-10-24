@@ -1,0 +1,6 @@
+langchain
+python-dotenv
+ipykernel
+langchain_groq
+langchain_community
+python-telegram-bot

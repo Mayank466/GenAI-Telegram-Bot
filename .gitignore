@@ -1,0 +1,48 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+env/
+venv/
+.venv/
+ENV/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Compiled extensions
+*.so
+
+# Distribution and packaging artifacts
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+develop-eggs/
+parts/
+sdist/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Test, type-checker, and linter caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter-generated checkpoints
+.ipynb_checkpoints/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
