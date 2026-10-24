@@ -81,7 +81,23 @@ def main():
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
-    app.run_polling(allowed_updates=Update.ALL_TYPES)
+
+    render_url = os.getenv("RENDER_EXTERNAL_URL")
+    if render_url:
+        webhook_secret = os.getenv("TELEGRAM_WEBHOOK_SECRET")
+        if not webhook_secret:
+            raise RuntimeError("TELEGRAM_WEBHOOK_SECRET is required when running on Render.")
+
+        app.run_webhook(
+            listen="0.0.0.0",
+            port=int(os.getenv("PORT", "10000")),
+            url_path="telegram-webhook",
+            webhook_url=f"{render_url.rstrip('/')}/telegram-webhook",
+            secret_token=webhook_secret,
+            allowed_updates=Update.ALL_TYPES,
+        )
+    else:
+        app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 
 if __name__ == "__main__":
