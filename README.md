@@ -85,3 +85,4 @@ You can also send `/help` to see usage instructions.
 ## Security
 
 Keep API keys private. If a key is exposed, revoke it with its provider and replace it in your local `.env` file. Never paste credentials into issues, screenshots, or commits.
+"# GenAI-Telegram-Bot" 
