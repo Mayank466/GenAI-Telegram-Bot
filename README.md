@@ -51,14 +51,15 @@ Experience it on Telegram: [@CtrlAltLaughBot](https://t.me/CtrlAltLaughBot). Sen
    pip install -r requirements.txt
    ```
 
-4. Create a `.env` file in the project root and add your credentials:
+4. Copy `.env.example` to `.env` in the project root and replace the placeholder values with your credentials:
 
    ```env
    TELEGRAM_API_KEY=your_telegram_bot_token
    GROQ_API_KEY=your_groq_api_key
+   TELEGRAM_WEBHOOK_SECRET=your_random_webhook_secret
    ```
 
-   Do not commit `.env` or share its contents. The `.gitignore` file excludes it from Git.
+   `TELEGRAM_WEBHOOK_SECRET` is only needed when deploying to Render. Do not commit `.env` or share its contents. The `.gitignore` file excludes it from Git.
 
 To run the optional testing notebook, install its additional development dependency with `pip install -r requirements-dev.txt`.
 
